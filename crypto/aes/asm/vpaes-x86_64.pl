@@ -898,10 +898,10 @@ my ($inp,$out,$len,$key,$ivp,$enc)=("%rdi","%rsi","%rdx","%rcx","%r8","%r9");
 #                       size_t length, const AES_KEY *key,
 #                       unsigned char *ivp,const int enc);
 $code.=<<___;
-.globl	${PREFIX}_cbc_encrypt
-.type	${PREFIX}_cbc_encrypt,\@function,6
+.globl	${PREFIX}_cbc_encrypt__ASM
+.type	${PREFIX}_cbc_encrypt__ASM,\@function,6
 .align	16
-${PREFIX}_cbc_encrypt:
+${PREFIX}_cbc_encrypt__ASM:
 .cfi_startproc
 	endbranch
 	xchg	$key,$len
