@@ -26,7 +26,7 @@ struct virtine_aes_state {
 
 
 
-static virtine int do_vpaes_cbc_encrypt(struct virtine_aes_state *state, const AES_KEY key, int enc) {
+virtine int do_vpaes_cbc_encrypt(struct virtine_aes_state *state, const AES_KEY key, int enc) {
   vpaes_cbc_encrypt_ASM((unsigned char *)state->in, (unsigned char *)state->out, state->length, &key, (unsigned char *)state->iv, enc);
   return 0;
 }
